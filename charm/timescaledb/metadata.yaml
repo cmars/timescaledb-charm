@@ -1,0 +1,18 @@
+name: timescaledb
+summary: TimescaleDB
+maintainer: Commercial Systems <jaas-crew@lists.canonical.com>
+description: |
+  An open-source database built for analyzing time-series data with the power
+  and convenience of SQL - on premise, at the edge or in the cloud. TimescaleDB
+  installs as a PostgreSQL extension. This charm is a subordinate to the main
+  postgresql charm that installs the extension and configures PostgreSQL to make
+  it generally available.
+tags:
+  - database
+subordinate: true
+requires:
+  host-system:
+    interface: juju-info
+    scope: container
+series:
+- bionic
