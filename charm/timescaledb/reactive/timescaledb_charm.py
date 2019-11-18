@@ -1,7 +1,7 @@
 import os
 from subprocess import check_call
 
-from charms.reactive import when, when_not, set_flag
+from charms.reactive import when_not, set_flag, hook
 
 from charmhelpers.core import hookenv
 
@@ -27,3 +27,9 @@ def install_timescaledb_charm():
     check_call(['systemctl', 'restart', 'postgresql'])
     hookenv.status_set('active', 'ready')
     set_flag('timescaledb-charm.installed')
+
+
+@hook('upgrade-charm')
+def upgrade():
+    check_call(['apt-get', 'update', 'qq'])
+    check_call(['apt-get', 'dist-upgrade', '-y'])
