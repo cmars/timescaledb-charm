@@ -1,0 +1,3 @@
+[submodule "charm/timescaledb/mod/operator"]
+	path = charm/timescaledb/mod/operator
+	url = https://github.com/canonical/operator

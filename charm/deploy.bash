@@ -20,7 +20,7 @@ chmod 600 $HOME/.local/share/juju/store-usso-token
 charm login -B
 charm whoami
 
-CHARM_PUSH=$(charm push $HERE/builds/${CHARM_NAME} cs:~${CS_USER}/${CHARM_NAME})
+CHARM_PUSH=$(charm push $HERE/${CHARM_NAME} cs:~${CS_USER}/${CHARM_NAME})
 CHARM_REV=$(echo $CHARM_PUSH | awk '/url:/ {print $2}')
 
 echo "Pushed charm $CHARM_REV"

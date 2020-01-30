@@ -1,4 +1,0 @@
-includes: ['layer:basic']
-options:
-  basic:
-    include_system_packages: True
